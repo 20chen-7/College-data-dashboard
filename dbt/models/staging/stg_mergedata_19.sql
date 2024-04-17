@@ -4,7 +4,7 @@ with
 
 collegedata as (
 
-    select * from {{ source('staging', 'merged_data_1920') }}
+    select * from {{ source('staging', 'mergedata_19') }}
 
 ),
 
@@ -641,9 +641,7 @@ renamed as (
         omenrup_nopell_notfirsttime,
         omacht8_nopell_all,
         omacht8_nopell_firsttime,
-        omacht8_nopell_notfirsttime,
-        __index_level_0__
-        __index_level_0__
+        omacht8_nopell_notfirsttime
     from collegedata
 
 )
