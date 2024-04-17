@@ -109,10 +109,10 @@ The following requirements are required:
    - Click "Create" to create the service account.
    - After you've created the service account, the private key file(usually JSON file) should be safely saved and download.
    - For this project, rename it to `creds.json`.
-
 2. [Docker](https://docs.docker.com/engine/install/)
 3. [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 4. [Terraform](https://developer.hashicorp.com/terraform/install)
+5. [Mage AI](https://github.com/mage-ai/mage-zoomcamp/tree/master)
 
 # Running the Code
 
@@ -121,7 +121,6 @@ The following requirements are required:
 ```sh
 git clone https://github.com/20chen-7/College-data-dashboard.git
 ```
-
 2. Create key folder and save the sevice account private key(my-creds.json) into terraform/key folder and mage-zoomcamp directories.
 ```sh
 cd terraform_project/
@@ -166,7 +165,8 @@ docker compose up
 10. Pipeline under the name `magic-zoomcamp`. Then, navigate to http://localhost:6789 in your browser! 
   - Click to `project_pipeline_datalake` data pipeline.
     (replace the file name for the data loader and explorer, we will upload the parquet files into gcb. )
-  - Click to `project_pipeline_data_warehouse` data pipeline and run then we will get the `school_data` table.
+  - Click to `project_pipeline_datalake_merge` data pipeline to upload `MERGED2019_20_PP.parquet`.
+  - Click to `project_pipeline_data_warehouse` data pipeline and run then we will get the `school_data` table which .
 11. copy content of gcp_datawarehouse/project_query_merge.sql into the bigquery under GCP, through comparing byte processing and time, we can determine the partition and cluster variables.
 
 ## Setting up dbt Cloud
