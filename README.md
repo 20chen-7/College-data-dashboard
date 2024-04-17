@@ -58,15 +58,19 @@ Simultaneously, the geo chart shows that the recordings in 2019, are distributed
 # Code Structure 
 
 ```
-├── requirement.txt
-├── dashboard_code
-├── data_schema
+├── dashboard_table
+│ ├── data_visual_project_time.sql
+│ ├── project_query_merge.sql
+├── dataset_prepare
+│ ├── download_data_parquet.ipynb
 ├── dbt
-├── gcp_datawarehouse
-├── mage-zoomcamp
+│ ├── de-bootcamp-final-project
+│ ├── dev.env
+│ ├── Dockerfile
+│ ├── docker-compose.yml
+├── mage
 ├── image
 ├── terraform_project
-├── dashboard_code
 └── ReadME.md
 ```
 
@@ -167,7 +171,7 @@ docker compose up
     (replace the file name for the data loader and explorer, we will upload the parquet files into gcb. )
   - Click to `project_pipeline_datalake_merge` data pipeline to upload `MERGED2019_20_PP.parquet`.
   - Click to `project_pipeline_data_warehouse` data pipeline and run then we will get the `study_data_xx` for diverse years.
-  
+
   **IMPORTANT**: `FieldOfStudyData1819_1920_PP.csv` file is the recording in 2019 based on the data.yml on the website(source website). So I renamed it `studydata_19`. Similarly, `MERGED2019_20_PP.parquet` in the dataset,is renamed as `mergedata_19`.
 12. copy `dashboard_table/data_visual_project_time.sql` to build `state_yearly_record_counts` table, preparing for data dashboard visualization.
 
