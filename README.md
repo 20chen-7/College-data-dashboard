@@ -97,7 +97,7 @@ The following requirements are required:
 
 1. Build [Google Cloud Platform](https://cloud.google.com/) service account.
     - Navigate to the GCP Console and create a new project. Give the project name and copy the project ID.
-3. Create a service account:
+2. Create a service account:
    - Click "IAM & Admin" and then chose "Service accounts".
    - Click "Create service account" button.
    - Enter a name for your service account.
@@ -109,10 +109,10 @@ The following requirements are required:
    - Click "Create" to create the service account.
    - After you've created the service account, the private key file(usually JSON file) should be safely saved and download.
    - For this project, rename it to `creds.json`.
-2. [Docker](https://docs.docker.com/engine/install/)
-3. [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-4. [Terraform](https://developer.hashicorp.com/terraform/install)
-5. [Mage AI](https://github.com/mage-ai/mage-zoomcamp/tree/master)
+3. [Docker](https://docs.docker.com/engine/install/)
+4. [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+5. [Terraform](https://developer.hashicorp.com/terraform/install)
+6. [Mage AI](https://github.com/mage-ai/mage-zoomcamp/tree/master)
 
 # Running the Code
 
@@ -147,27 +147,28 @@ terraform destroy
 ```sh
 cd ../dataset_prepare
 ```
-7. Move the mage directory
+8. Move the mage directory
 ```sh
 cd ../mage
 ```
-8. Rename `dev.env` to `.env`.
+9. Rename `dev.env` to `.env`.
 ```sh
 mv dev.env .env
 ```
-9. Now, let's build the container
+10. Now, let's build the container
 ```sh
 docker compose build
 ```
 ```sh
 docker compose up
 ```
-10. Pipeline under the name `magic-zoomcamp`. Then, navigate to http://localhost:6789 in your browser! 
+11. Pipeline under the name `magic-zoomcamp`. Then, navigate to http://localhost:6789 in your browser! 
   - Click to `project_pipeline_datalake` data pipeline.
     (replace the file name for the data loader and explorer, we will upload the parquet files into gcb. )
   - Click to `project_pipeline_datalake_merge` data pipeline to upload `MERGED2019_20_PP.parquet`.
-  - Click to `project_pipeline_data_warehouse` data pipeline and run then we will get the `school_data` table which .
-11. copy content of gcp_datawarehouse/project_query_merge.sql into the bigquery under GCP, through comparing byte processing and time, we can determine the partition and cluster variables.
+  - Click to `project_pipeline_data_warehouse` data pipeline and run then we will get the `study_data_xx` for diverse years.
+  **IMPORTANT**: `FieldOfStudyData1819_1920_PP.csv` file is the recording in 2019 based on the data.yml on the website(source website). So I renamed it `studydata_19`. Similarly, `MERGED2019_20_PP.parquet` in the dataset,is renamed as `mergedata_19`.
+12. copy `dashboard_table/data_visual_project_time.sql` to build `state_yearly_record_counts` table, preparing for data dashboard visualization.
 
 ## Setting up dbt Cloud
 ```sh
@@ -176,5 +177,6 @@ dbt build
 ```sh
 dbt run --vars '{'is_test_run': 'false'}'
 ```
-12. To visualize the time-seres, we can copy `gcp_datawarehouse/project_query_merge.sql` and create table accordingly. Then use the Google looker studio and find the table through ranging the states and years.
+dbt accomplishment check in branch `20chen-7-patch-1`.
+13. To visualize the time-seres, we can copy `gcp_datawarehouse/project_query_merge.sql` and create table accordingly. Then use the Google looker studio and find the table through ranging the states and years.
     
