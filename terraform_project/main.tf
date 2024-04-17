@@ -29,7 +29,7 @@ resource "google_storage_bucket" "college_datacollege-scorecard-data-2024-04" {
   }
 }
 
-resource "google_bigquery_dataset" "college_data" {
+resource "google_bigquery_dataset" "college_dataset_ivy" {
   dataset_id = var.bq_dataset_name
   location   = var.location
 }
