@@ -4,30 +4,30 @@
     )
 }}
 
-with merged_data as (
+with mergedata as (
     select *
-    from {{ ref('stg_merged_data_1920') }}
+    from {{ ref('stg_mergedata_19') }}
 ), 
 studydata as (
     select *
-    from {{ ref('stg_studydata_1920') }}
+    from {{ ref('stg_studydata_19') }}
 )
 select
-    merged_data.collegeid,
-    merged_data.instnm,
-    merged_data.city,
-    merged_data.stabbr,
-    merged_data.main,
-    merged_data.numbranch,
-    merged_data.preddeg,
-    merged_data.degree_type_description,
-    merged_data.highdeg,
-    merged_data.control,
-    merged_data.st_fips,
-    merged_data.adm_rate,
-    merged_data.adm_rate_all,
-    merged_data.sat_avg,
-    merged_data.sat_avg_all,
+    mergedata.collegeid,
+    mergedata.instnm,
+    mergedata.city,
+    mergedata.stabbr,
+    mergedata.main,
+    mergedata.numbranch,
+    mergedata.preddeg,
+    mergedata.degree_type_description,
+    mergedata.highdeg,
+    mergedata.control,
+    mergedata.st_fips,
+    mergedata.adm_rate,
+    mergedata.adm_rate_all,
+    mergedata.sat_avg,
+    mergedata.sat_avg_all,
     studydata.distance
-from merged_data
-inner join studydata on merged_data.unitid = studydata.unitid
+from mergedata
+inner join studydata on mergedata.unitid = studydata.unitid

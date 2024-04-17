@@ -3,13 +3,13 @@ version: 2
 sources:
   - name: staging
     database: de-bootcamp-final-project
-    schema: college_data_all
+    schema: college_dataset_ivy
     tables:
-      - name: merged_data_1920
+      - name: mergedata_19
         
-      - name: studydata_1920
+      - name: studydata_19
 models:
-  - name: stg_studydata_1920
+  - name: stg_studydata_19
     description: ""
     columns:
       - name: unitid
@@ -68,7 +68,7 @@ models:
         data_type: int64
         description: ""
 
-  - name: stg_merged_data_1920
+  - name: stg_mergedata_19
     description: ""
     columns:
       - name: collegeid
