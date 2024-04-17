@@ -144,10 +144,13 @@ terraform apply
 terraform destroy
 ```
 **IMPORTANT**: We only use this command when you finished with the whole project.
-
+7. Prepare the dataset and run `download_data_parquet.ipynb`
+```sh
+cd ../dataset_prepare
+```
 7. Move the mage directory
 ```sh
-cd ../mage-project
+cd ../mage
 ```
 8. Rename `dev.env` to `.env`.
 ```sh
