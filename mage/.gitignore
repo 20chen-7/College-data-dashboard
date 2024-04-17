@@ -172,3 +172,6 @@ scratch*
 # magic-zoomcamp
 *.json
 
+#ignore the dataset
+mage/de-bootcamp-final-project/dataset/
+
