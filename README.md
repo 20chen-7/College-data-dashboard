@@ -165,9 +165,9 @@ docker compose up
 ```
 10. Pipeline under the name `magic-zoomcamp`. Then, navigate to http://localhost:6789 in your browser! 
   - Click to `project_pipeline_datalake` data pipeline.
-    (replace the file name for the data loader and explorer, we will get the parquet files later)
-  - Click to `project_pipeline_datalake` data pipeline and run then we will get the `school_data` table.
-11. copy project/gcp_datawarehouse/project_query_merge.sql into the bigquery under GCP, through comparing byte processing and time, we can determine the partition and cluster variables.
+    (replace the file name for the data loader and explorer, we will upload the parquet files into gcb. )
+  - Click to `project_pipeline_data_warehouse` data pipeline and run then we will get the `school_data` table.
+11. copy content of gcp_datawarehouse/project_query_merge.sql into the bigquery under GCP, through comparing byte processing and time, we can determine the partition and cluster variables.
 
 ## Setting up dbt Cloud
 ```sh
@@ -176,5 +176,5 @@ dbt build
 ```sh
 dbt run --vars '{'is_test_run': 'false'}'
 ```
-12. To visualize the time-seres, we can copy `project/gcp_datawarehouse/project_query_merge.sql` and create table accordingly. Then use the Google looker studio and find the table through ranging the states and years.
+12. To visualize the time-seres, we can copy `gcp_datawarehouse/project_query_merge.sql` and create table accordingly. Then use the Google looker studio and find the table through ranging the states and years.
     
