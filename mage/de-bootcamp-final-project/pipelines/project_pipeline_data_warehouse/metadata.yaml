@@ -10,12 +10,12 @@ blocks:
   language: python
   name: load_college_data
   retry_config: null
-  status: executed
+  status: updated
   timeout: null
   type: data_loader
   upstream_blocks: []
   uuid: load_college_data
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration:
     file_source:
@@ -28,19 +28,19 @@ blocks:
   language: python
   name: transform_data_colleage
   retry_config: null
-  status: executed
+  status: failed
   timeout: null
   type: transformer
   upstream_blocks:
   - load_college_data
   uuid: transform_data_colleage
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration:
     data_provider: bigquery
     data_provider_profile: default
-    data_provider_schema: college_data
-    data_provider_table: filed_study
+    data_provider_schema: ' college_dataset_ivy'
+    data_provider_table: study_data_15
     dbt: {}
     disable_query_preprocessing: false
     export_write_policy: append
@@ -81,5 +81,5 @@ spark_config: {}
 tags: []
 type: python
 uuid: project_pipeline_data_warehouse
-variables_dir: /home/src/mage_data/magic-zoomcamp
+variables_dir: /home/src/mage_data/de-bootcamp-final-project
 widgets: []

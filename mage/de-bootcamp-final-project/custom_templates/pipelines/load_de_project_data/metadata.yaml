@@ -1,0 +1,148 @@
+description: null
+name: null
+pipeline:
+  blocks:
+  - all_upstream_blocks_executed: false
+    callback_blocks: []
+    color: null
+    conditional_blocks: []
+    configuration: {}
+    downstream_blocks:
+    - collage_gcs_parquet
+    executor_config: null
+    executor_type: local_python
+    has_callback: false
+    language: python
+    metadata: {}
+    name: clean_collage_data
+    pipelines:
+    - added_at: null
+      pipeline:
+        created_at: '2024-04-17 03:33:25.468966+00:00'
+        description: null
+        name: load_data_field
+        repo_path: de-bootcamp-final-project
+        tags: []
+        type: python
+        uuid: load_data_field
+      updated_at: 1713333973.474286
+    - added_at: null
+      pipeline:
+        created_at: '2024-02-08 17:21:29.661886+00:00'
+        description: null
+        name: project_pipeline_datalake
+        repo_path: de-bootcamp-final-project
+        tags: []
+        type: python
+        uuid: project_pipeline_datalake
+      updated_at: 1713333973.475699
+    retry_config: null
+    status: updated
+    tags: []
+    timeout: null
+    type: transformer
+    upstream_blocks:
+    - load_data_project_api
+    uuid: clean_collage_data
+  - all_upstream_blocks_executed: false
+    callback_blocks: []
+    color: null
+    conditional_blocks: []
+    configuration:
+      file_source:
+        path: data_exporters/collage_gcs_parquet.py
+    downstream_blocks: []
+    executor_config: null
+    executor_type: local_python
+    has_callback: false
+    language: python
+    metadata: {}
+    name: collage_gcs_parquet
+    pipelines:
+    - added_at: null
+      pipeline:
+        created_at: '2024-04-17 03:33:25.468966+00:00'
+        description: null
+        name: load_data_field
+        repo_path: de-bootcamp-final-project
+        tags: []
+        type: python
+        uuid: load_data_field
+      updated_at: 1713333973.474324
+    - added_at: null
+      pipeline:
+        created_at: '2024-02-08 17:21:29.661886+00:00'
+        description: null
+        name: project_pipeline_datalake
+        repo_path: de-bootcamp-final-project
+        tags: []
+        type: python
+        uuid: project_pipeline_datalake
+      updated_at: 1713333973.475734
+    retry_config: null
+    status: updated
+    tags: []
+    timeout: null
+    type: data_exporter
+    upstream_blocks:
+    - clean_collage_data
+    uuid: collage_gcs_parquet
+  - all_upstream_blocks_executed: true
+    callback_blocks: []
+    color: null
+    conditional_blocks: []
+    configuration:
+      file_source:
+        path: data_loaders/load_data_project_api.py
+    downstream_blocks:
+    - clean_collage_data
+    executor_config: null
+    executor_type: local_python
+    has_callback: false
+    language: python
+    metadata: {}
+    name: load_data_project_api
+    pipelines:
+    - added_at: 1713334314.663673
+      pipeline:
+        created_at: '2024-02-08 17:21:29.661886+00:00'
+        description: null
+        name: project_pipeline_datalake
+        repo_path: de-bootcamp-final-project
+        tags: []
+        type: python
+        uuid: project_pipeline_datalake
+      updated_at: 1713334314.663984
+    retry_config: null
+    status: updated
+    tags: []
+    timeout: null
+    type: data_loader
+    upstream_blocks: []
+    uuid: load_data_project_api
+  cache_block_output_in_memory: false
+  callbacks: []
+  concurrency_config: {}
+  conditionals: []
+  created_at: '2024-02-08 17:21:29.661886+00:00'
+  data_integration: null
+  description: null
+  executor_config: {}
+  executor_count: 1
+  executor_type: null
+  extensions: {}
+  name: project_pipeline_datalake
+  notification_config: {}
+  remote_variables_dir: null
+  retry_config: {}
+  run_pipeline_in_one_process: false
+  settings:
+    triggers: null
+  spark_config: {}
+  tags: []
+  type: python
+  uuid: load_de_project_data
+  variables_dir: /home/src/mage_data/de-bootcamp-final-project
+  widgets: []
+tags: []
+user: {}

@@ -20,7 +20,14 @@ def load_from_google_cloud_storage(*args, **kwargs):
     config_profile = 'default'
 
     bucket_name = 'college-scorecard-data-2024-04'
-    object_key = 'college-studydata-1819-1920.parquet'
+    """
+    'FieldOfStudyData1415_1516_PP.parquet'
+    'FieldOfStudyData1516_1617_PP.parquet'
+    'FieldOfStudyData1617_1718_PP.parquet'
+    'FieldOfStudyData1718_1819_PP.parquet'
+    'FieldOfStudyData1819_1920_PP.parquet'
+    """
+    object_key = 'FieldOfStudyData1415_1516_PP.parquet'
 
     return GoogleCloudStorage.with_config(ConfigFileLoader(config_path, config_profile)).load(
         bucket_name,

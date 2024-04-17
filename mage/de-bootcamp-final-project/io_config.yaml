@@ -37,7 +37,7 @@ default:
   DUCKDB_DATABASE: database
   DUCKDB_SCHEMA: main
   # Google
-  GOOGLE_SERVICE_ACC_KEY:
+  # GOOGLE_SERVICE_ACC_KEY:
     # type: service_account
     # project_id: project-id
     # private_key_id: key-id

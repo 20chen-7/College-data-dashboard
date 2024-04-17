@@ -7,9 +7,6 @@ from os import path
 if 'data_exporter' not in globals():
     from mage_ai.data_preparation.decorators import data_exporter
 
-
-
-
 @data_exporter
 def export_data_to_big_query(df: DataFrame, **kwargs) -> None:
     """
@@ -22,7 +19,15 @@ def export_data_to_big_query(df: DataFrame, **kwargs) -> None:
     config_profile = 'default'
 
     bucket_name = 'college-scorecard-data-2024-04'
-    object_key = 'college-studydata-1819-1920.parquet'
+#     desired_files = [
+#     
+#     'FieldOfStudyData1415_1516_PP.parquet',
+#     'FieldOfStudyData1516_1617_PP.parquet',
+#     'FieldOfStudyData1617_1718_PP.parquet',
+#     'FieldOfStudyData1718_1819_PP.parquet',
+#   '  FieldOfStudyData1819_1920_PP.parquet',
+# ]
+    object_key = 'FieldOfStudyData1415_1516_PP.parquet'
 
     GoogleCloudStorage.with_config(ConfigFileLoader(config_path, config_profile)).export(
         df,
