@@ -2,7 +2,7 @@ with
 
 studydata as (
 
-    select * from {{ source('staging', 'studydata_1920') }}
+    select * from {{ source('staging', 'studydata_19') }}
 
 ),
 
@@ -20,9 +20,7 @@ renamed as (
         creddesc,
         ipedscount1,
         ipedscount2,
-        distance,
-        __index_level_0__
-
+        distance
     from studydata
 
 )
