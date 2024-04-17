@@ -144,7 +144,7 @@ terraform apply
 terraform destroy
 ```
 **IMPORTANT**: We only use this command when you finished with the whole project.
-7. Prepare the dataset and run `download_data_parquet.ipynb`
+7. Prepare the dataset into mage/de-bootcamp-final-project/dataset and run `download_data_parquet.ipynb`
 ```sh
 cd ../dataset_prepare
 ```
