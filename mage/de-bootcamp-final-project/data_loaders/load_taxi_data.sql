@@ -1,1 +1,0 @@
-SELECT * FROM ny_taxi.yellow_cab_data Limit 10;
