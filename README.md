@@ -167,6 +167,7 @@ docker compose up
     (replace the file name for the data loader and explorer, we will upload the parquet files into gcb. )
   - Click to `project_pipeline_datalake_merge` data pipeline to upload `MERGED2019_20_PP.parquet`.
   - Click to `project_pipeline_data_warehouse` data pipeline and run then we will get the `study_data_xx` for diverse years.
+  
   **IMPORTANT**: `FieldOfStudyData1819_1920_PP.csv` file is the recording in 2019 based on the data.yml on the website(source website). So I renamed it `studydata_19`. Similarly, `MERGED2019_20_PP.parquet` in the dataset,is renamed as `mergedata_19`.
 12. copy `dashboard_table/data_visual_project_time.sql` to build `state_yearly_record_counts` table, preparing for data dashboard visualization.
 
